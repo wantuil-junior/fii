@@ -1,0 +1,16 @@
+table  { width: 400px; height:250; 
+         background-color:#ddd ;color:black;
+         border-spacing: 0;
+         margin:0 auto;
+     }
+
+
+th{border: 1px solid black}
+td{border: 1px solid black;  padding-left:8px;}
+
+
+img { margin-top:auto;}
+
+
+
+
