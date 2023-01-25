@@ -28,7 +28,10 @@
     </table> 
 
     <script>
-      fetch("https://www.okanebox.com.br/api/acoes/ultima/HGLG11/").then((response) => {response.json().then((cotacao) => {document.getElementById('inHGLG11').value = cotacao.PREULT ;})})
+
+      //https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/hglg11
+      
+      fetch("https://felipemarinho.vercel.app/api/b3/prices/HGLG11").then((response) => {response.json().then((cotacao) => {document.getElementById('inHGLG11').value = cotacao.currentPrice;})})
       fetch("https://www.okanebox.com.br/api/acoes/ultima/KNRI11/").then((response) => {response.json().then((cotacao) => {document.getElementById('inKNRI11').value = cotacao.PREULT ;})})
       fetch("https://www.okanebox.com.br/api/acoes/ultima/BTLG11/").then((response) => {response.json().then((cotacao) => {document.getElementById('inBTLG11').value = cotacao.PREULT ;})})
       fetch("https://www.okanebox.com.br/api/acoes/ultima/XPLG11/").then((response) => {response.json().then((cotacao) => {document.getElementById('inXPLG11').value = cotacao.PREULT ;})})
