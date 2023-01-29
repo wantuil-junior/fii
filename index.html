@@ -14,16 +14,16 @@
  
         <tr>  <th>Nome</th><th>Gestor</th> <th>Preco</th> <th>Quantidade</th>    </tr>
 
-        <tr>  <td>HGLG11</td>  <td>Credit Suisse</td>       <td><input type = "text" id = "inHGLG11"></td>  <td>0</td>  </tr>
-        <tr>  <td>KNRI11</td>  <td>KINEA</td>               <td><input type = "text" id = "inKNRI11"></td>  <td>0</td>  </tr>
-        <tr>  <td>BTLG11</td>  <td>BTG Pactual</td>         <td><input type = "text" id = "inBTLG11"></td>  <td>0</td>  </tr>
-        <tr>  <td>XPLG11</td>  <td>XP Vista</td>            <td><input type = "text" id = "inXPLG11"></td>  <td>0</td>  </tr>
-        <tr>  <td>VILG11</td>  <td>Vinci Real State</td>    <td><input type = "text" id = "inVILG11"></td>  <td>0</td>  </tr>
-        <tr>  <td>BRCO11</td>  <td>Bresco</td>              <td><input type = "text" id = "inBRCO11"></td>  <td>0</td>  </tr>
-        <tr>  <td>LVBI11</td>  <td>VBI Real State</td>      <td><input type = "text" id = "inLVBI11"></td>  <td>0</td>  </tr>
-        <tr>  <td>XPML11</td>  <td>XP Vista</td>            <td><input type = "text" id = "inXPML11"></td>  <td>0</td>  </tr>
-        <tr>  <td>VISC11</td>  <td>Vinci Real State</td>    <td><input type = "text" id = "inVISC11"></td>  <td>0</td>  </tr>
-        <tr>  <td>MALL11</td>  <td>Genial Gestao</td>       <td><input type = "text" id = "inMALL11"></td>  <td>0</td>  </tr>
+        <tr>  <td><CENTER>HGLG11</CENTER></td>     <td><CENTER>Credit Suisse</CENTER></td>       <td><input type = "text" id = "inHGLG11"></td>  <td>0</td>  </tr>
+        <tr>  <td><CENTER>KNRI11</CENTER></td>     <td><CENTER>KINEA</CENTER></td>               <td><input type = "text" id = "inKNRI11"></td>  <td>0</td>  </tr>
+        <tr>  <td><CENTER>BTLG11</CENTER></td>     <td><CENTER>BTG Pactual</CENTER></td>         <td><input type = "text" id = "inBTLG11"></td>  <td>0</td>  </tr>
+        <tr>  <td><CENTER>XPLG11</CENTER></td>     <td><CENTER>XP Vista</CENTER></td>            <td><input type = "text" id = "inXPLG11"></td>  <td>0</td>  </tr>
+        <tr>  <td><CENTER>VILG11</CENTER></td>     <td><CENTER>Vinci Real State</CENTER></td>    <td><input type = "text" id = "inVILG11"></td>  <td>0</td>  </tr>
+        <tr>  <td><CENTER>BRCO11</CENTER></td>     <td><CENTER>Bresco</CENTER></td>              <td><input type = "text" id = "inBRCO11"></td>  <td>0</td>  </tr>
+        <tr>  <td><CENTER>LVBI11</CENTER></td>     <td><CENTER>VBI Real State</CENTER></td>      <td><input type = "text" id = "inLVBI11"></td>  <td>0</td>  </tr>
+        <tr>  <td><CENTER>XPML11</CENTER></td>     <td><CENTER>XP Vista</CENTER></td>            <td><input type = "text" id = "inXPML11"></td>  <td>0</td>  </tr>
+        <tr>  <td><CENTER>VISC11</CENTER></td>     <td><CENTER>Vinci Real State</CENTER></td>    <td><input type = "text" id = "inVISC11"></td>  <td>0</td>  </tr>
+        <tr>  <td><CENTER>MALL11</CENTER></td>     <td><CENTER>Genial Gestao</CENTER></td>       <td><input type = "text" id = "inMALL11"></td>  <td>0</td>  </tr>
 
     </table> 
 
@@ -31,7 +31,7 @@
 
       //https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/hglg11
       
-      fetch("https://felipemarinho.vercel.app/api/b3/prices/HGLG11").then((response)  => {response.json().then((cotacao) => {document.getElementById('inHGLG11').value = cotacao.currentPrice;})})
+      fetch("https://brapi.dev/api/quote/PETR4").then((response)  => {response.json().then((cotacao) => {document.getElementById('inHGLG11').value = cotacao.rsymbol;})})
       fetch("https://www.okanebox.com.br/api/acoes/ultima/KNRI11/").then((response)   => {response.json().then((cotacao) => {document.getElementById('inKNRI11').value = cotacao.PREULT ;})})
       fetch("https://www.okanebox.com.br/api/acoes/ultima/BTLG11/").then((response)   => {response.json().then((cotacao) => {document.getElementById('inBTLG11').value = cotacao.PREULT ;})})
       fetch("https://www.okanebox.com.br/api/acoes/ultima/XPLG11/").then((response)   => {response.json().then((cotacao) => {document.getElementById('inXPLG11').value = cotacao.PREULT ;})})
