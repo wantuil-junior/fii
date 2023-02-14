@@ -13,35 +13,33 @@
    <table class = "tabela1">
  
         <tr>  <th>Nome</th><th>Gestor</th> <th>Preco</th> <th>Quantidade</th>    </tr>
-
+       
         <tr>  <td>HGLG11</td>     <td>Credit Suisse</td>       <td><input type = "text" id = "inHGLG11"></td>  <td>0</td>  </tr>
-        <tr>  <td>KNRI11</td>     <td>KINEA</td>               <td><input type = "text" id = "inKNRI11"></td>  <td>0</td>  </tr>
         <tr>  <td>BTLG11</td>     <td>BTG Pactual</td>         <td><input type = "text" id = "inBTLG11"></td>  <td>0</td>  </tr>
-        <tr>  <td>XPLG11</td>     <td>XP Vista</td>            <td><input type = "text" id = "inXPLG11"></td>  <td>0</td>  </tr>
-        <tr>  <td>VILG11</td>     <td>Vinci Real State</td>    <td><input type = "text" id = "inVILG11"></td>  <td>0</td>  </tr>
         <tr>  <td>BRCO11</td>     <td>Bresco</td>              <td><input type = "text" id = "inBRCO11"></td>  <td>0</td>  </tr>
+        <tr>  <td>VILG11</td>     <td>Vinci Real State</td>    <td><input type = "text" id = "inVILG11"></td>  <td>0</td>  </tr>
         <tr>  <td>LVBI11</td>     <td>VBI Real State</td>      <td><input type = "text" id = "inLVBI11"></td>  <td>0</td>  </tr>
-        <tr>  <td>XPML11</td>     <td>XP Vista</td>            <td><input type = "text" id = "inXPML11"></td>  <td>0</td>  </tr>
-        <tr>  <td>VISC11</td>     <td>Vinci Real State</td>    <td><input type = "text" id = "inVISC11"></td>  <td>0</td>  </tr>
-        <tr>  <td>MALL11</td>     <td>Genial Gestao</td>       <td><input type = "text" id = "inMALL11"></td>  <td>0</td>  </tr>
+       
+        <tr>  <td>KNIP11</td>     <td>KINEA</td>                <td><input type = "text" id = "inKNIP11"></td>  <td>0</td>  </tr>
+        <tr>  <td>KNCA11</td>     <td>KINEA</td>                <td><input type = "text" id = "inKNCA11"></td>  <td>0</td>  </tr>
+
 
     </table> 
 
     <script>
-
-      //https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/hglg11
+  
+      //fetch("https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=HGLG11.SA&interval=1min&apikey=S4MUCCZZCQKRI0VZ").then((response)   => {response.json().then((cotacao) => {document.getElementById('inHGLG11').value = cotacao["Global Quote"]["05. price"] ;})})
       
-      fetch("https://brapi.dev/api/quote/PETR4").then((response)  => {response.json().then((cotacao) => {document.getElementById('inHGLG11').value = cotacao.rsymbol;})})
-      fetch("https://www.okanebox.com.br/api/acoes/ultima/KNRI11/").then((response)   => {response.json().then((cotacao) => {document.getElementById('inKNRI11').value = cotacao.PREULT ;})})
-      fetch("https://www.okanebox.com.br/api/acoes/ultima/BTLG11/").then((response)   => {response.json().then((cotacao) => {document.getElementById('inBTLG11').value = cotacao.PREULT ;})})
-      fetch("https://www.okanebox.com.br/api/acoes/ultima/XPLG11/").then((response)   => {response.json().then((cotacao) => {document.getElementById('inXPLG11').value = cotacao.PREULT ;})})
-      fetch("https://www.okanebox.com.br/api/acoes/ultima/VILG11/").then((response)   => {response.json().then((cotacao) => {document.getElementById('inVILG11').value = cotacao.PREULT ;})})
-      fetch("https://www.okanebox.com.br/api/acoes/ultima/BRCO11/").then((response)   => {response.json().then((cotacao) => {document.getElementById('inBRCO11').value = cotacao.PREULT ;})})
-      fetch("https://www.okanebox.com.br/api/acoes/ultima/LVBI11/").then((response)   => {response.json().then((cotacao) => {document.getElementById('inLVBI11').value = cotacao.PREULT ;})})
-      fetch("https://www.okanebox.com.br/api/acoes/ultima/XPML11/").then((response)   => {response.json().then((cotacao) => {document.getElementById('inXPML11').value = cotacao.PREULT ;})})
-      fetch("https://www.okanebox.com.br/api/acoes/ultima/VISC11/").then((response)   => {response.json().then((cotacao) => {document.getElementById('inVISC11').value = cotacao.PREULT ;})})
-      fetch("https://viacep.com.br/ws/31140490/json/").then((response)   => {response.json().then((cotacao) => {document.getElementById('inMALL11').value = cotacao.bairro;})})
+      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/HGLG11").then((response)   => {response.json().then((cotacao) => {document.getElementById('inHGLG11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
+      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/BTLG11").then((response)   => {response.json().then((cotacao) => {document.getElementById('inBTLG11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
+      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/BRCO11").then((response)   => {response.json().then((cotacao) => {document.getElementById('inBRCO11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
+      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/VILG11").then((response)   => {response.json().then((cotacao) => {document.getElementById('inVILG11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
+      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/LVBI11").then((response)   => {response.json().then((cotacao) => {document.getElementById('inLVBI11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
      
+      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/KNIP11").then((response)   => {response.json().then((cotacao) => {document.getElementById('inKNIP11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
+      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/KNCA11").then((response)   => {response.json().then((cotacao) => {document.getElementById('inKNCA11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
+     
+
     </script>    
 
 </BODY>
