@@ -23,6 +23,7 @@
         <tr>  <td>LVBI11</td>     <td>VBI Real State</td>      <td><input type = "text" id = "inLVBI11"></td>  <td>0</td>  </tr>
        
         <tr>  <td>KNCA11</td>     <td>KINEA</td>                <td><input type = "text" id = "inKNCA11"></td>  <td>0</td>  </tr>
+        <tr>  <td>CPTR11</td>     <td>Capitânia S.A.</td>       <td><input type = "text" id = "inCPTR11"></td>  <td>0</td>  </tr>
 
 
     </table> 
@@ -40,7 +41,7 @@
       fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/LVBI11").then((response)   => {response.json().then((cotacao) => {document.getElementById('inLVBI11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
 
       fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/KNCA11").then((response)   => {response.json().then((cotacao) => {document.getElementById('inKNCA11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
-     
+      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/CPTR11").then((response)   => {response.json().then((cotacao) => {document.getElementById('inCPTR11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
 
     </script>    
 
