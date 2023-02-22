@@ -15,6 +15,7 @@
         <tr>  <th>Nome</th><th>Gestor</th> <th>Preco</th> <th>Quantidade</th>    </tr>
        
         <tr>  <td>HGLG11</td>     <td>Credit Suisse</td>       <td><input type = "text" id = "inHGLG11"></td>  <td>0</td>  </tr>
+        <tr>  <td>KNRI11</td>     <td>KINEA</td>               <td><input type = "text" id = "inKNRI11"></td>  <td>0</td>  </tr>
         <tr>  <td>BTLG11</td>     <td>BTG Pactual</td>         <td><input type = "text" id = "inBTLG11"></td>  <td>0</td>  </tr>
         <tr>  <td>XPLG11</td>     <td>XP Vista</td>            <td><input type = "text" id = "inXPLG11"></td>  <td>0</td>  </tr>
         
@@ -33,6 +34,7 @@
       //fetch("https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=HGLG11.SA&interval=1min&apikey=S4MUCCZZCQKRI0VZ").then((response)   => {response.json().then((cotacao) => {document.getElementById('inHGLG11').value = cotacao["Global Quote"]["05. price"] ;})})
       
       fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/HGLG11").then((response)   => {response.json().then((cotacao) => {document.getElementById('inHGLG11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
+      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/KNRI11").then((response)   => {response.json().then((cotacao) => {document.getElementById('inKNRI11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
       fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/BTLG11").then((response)   => {response.json().then((cotacao) => {document.getElementById('inBTLG11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
       fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/XPLG11").then((response)   => {response.json().then((cotacao) => {document.getElementById('inXPLG11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
      
