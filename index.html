@@ -14,17 +14,18 @@
  
         <tr>  <th>Fundo</th><th>Gestor</th> <th>Cotação</th> <th>Quantidade</th>    </tr>
        
-        <tr>  <td>HGLG11</td>     <td>Credit Suisse</td>       <td><input type = "text" id = "inHGLG11"></td>  <td>0</td>  </tr>
-        <tr>  <td>KNRI11</td>     <td>KINEA</td>               <td><input type = "text" id = "inKNRI11"></td>  <td>0</td>  </tr>
-        <tr>  <td>BTLG11</td>     <td>BTG Pactual</td>         <td><input type = "text" id = "inBTLG11"></td>  <td>0</td>  </tr>
-        <tr>  <td>XPLG11</td>     <td>XP Vista</td>            <td><input type = "text" id = "inXPLG11"></td>  <td>20</td>  </tr>
+        <tr>  <td>1   -  HGLG11</td>     <td>Credit Suisse</td>       <td><input type = "text" id = "inHGLG11"></td>  <td>0</td>   </tr>
+        <tr>  <td>2   -  KNRI11</td>     <td>KINEA</td>               <td><input type = "text" id = "inKNRI11"></td>  <td>0</td>   </tr>
+        <tr>  <td>3   -  BTLG11</td>     <td>BTG Pactual</td>         <td><input type = "text" id = "inBTLG11"></td>  <td>0</td>   </tr>
+        <tr>  <td>4   -  XPLG11</td>     <td>XP Vista</td>            <td><input type = "text" id = "inXPLG11"></td>  <td>20</td>  </tr>
         
-        <tr>  <td>BRCO11</td>     <td>Bresco</td>              <td><input type = "text" id = "inBRCO11"></td>  <td>0</td>  </tr>
-        <tr>  <td>VILG11</td>     <td>Vinci Real State</td>    <td><input type = "text" id = "inVILG11"></td>  <td>0</td>  </tr>
-        <tr>  <td>LVBI11</td>     <td>VBI Real State</td>      <td><input type = "text" id = "inLVBI11"></td>  <td>0</td>  </tr>
+        <tr>  <td>5   -  BRCO11</td>     <td>Bresco</td>              <td><input type = "text" id = "inBRCO11"></td>  <td>0</td>   </tr>
+        <tr>  <td>6   -  VILG11</td>     <td>Vinci Real State</td>    <td><input type = "text" id = "inVILG11"></td>  <td>0</td>   </tr>
+        <tr>  <td>7   -  LVBI11</td>     <td>VBI Real State</td>      <td><input type = "text" id = "inLVBI11"></td>  <td>0</td>   </tr>
        
-        <tr>  <td>CPTS11</td>     <td>Capitânia S.A.</td>       <td><input type = "text" id = "inCPTS11"></td>  <td>0</td>  </tr>
-        <tr>  <td>CPTR11</td>     <td>Capitânia S.A.</td>       <td><input type = "text" id = "inCPTR11"></td>  <td>0</td>  </tr>
+        <tr>  <td>8   -  CPTS11</td>     <td>Capitânia S.A.</td>       <td><input type = "text" id = "inCPTS11"></td>  <td>0</td>  </tr>
+        <tr>  <td>9   -  CPTR11</td>     <td>Capitânia S.A.</td>       <td><input type = "text" id = "inCPTR11"></td>  <td>0</td>  </tr>
+        <tr>  <td>10  -  EGAF11</td>     <td>ECO Gestão de Ativos</td> <td><input type = "text" id = "inEGAF11"></td>  <td>0</td>  </tr>
 
 
     </table> 
@@ -44,6 +45,7 @@
 
       fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/CPTS11").then((response)   => {response.json().then((cotacao) => {document.getElementById('inCPTS11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
       fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/CPTR11").then((response)   => {response.json().then((cotacao) => {document.getElementById('inCPTR11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
+      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/EGAF11").then((response)   => {response.json().then((cotacao) => {document.getElementById('inEGAF11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
 
     </script>    
 
