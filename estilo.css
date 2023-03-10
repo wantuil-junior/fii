@@ -1,24 +1,24 @@
-table  { width: 700px; height:240; 
+table  { width: 750px; height:240; 
     background-color:white ;color:black;
     margin:5% auto;     /*Alinhamento vertical e horizontal*/
     border-spacing: 0; }   
 
  
 
-th{  width: 175px; height:12; 
+th{  width: 150px; height:12; 
   background-color:gainsboro  ;color:black;
   text-align: center;
   border: 1px solid black; }
 
 
 
-td{  width: 175px; height:12; 
+td{  width: 150px; height:12; 
  background-color:white ;color:black;
  text-align: center;
  border: 1px solid black; }  
  
 
-input{  width: 175px; height:12; 
+input{  width: 150px; height:12; 
      background-color:white ;color:black;
      text-align: center;
      border: 0; }
