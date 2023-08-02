@@ -21,10 +21,7 @@
         <tr>  <td>BRCO11</td>     <td>Bresco</td>               <td><input type = "text" id = "cotacao-BRCO11"></td>       <td><input type = "text" id = "provento-BRCO11"></td>      <td>   </td>   </tr>
         <tr>  <td>VILG11</td>     <td>Vinci Real State</td>     <td><input type = "text" id = "cotacao-VILG11"></td>       <td><input type = "text" id = "provento-VILG11"></td>      <td>   </td>   </tr>
         <tr>  <td>LVBI11</td>     <td>VBI Real State</td>       <td><input type = "text" id = "cotacao-LVBI11"></td>       <td><input type = "text" id = "provento-LVBI11"></td>      <td>   </td>   </tr>
-        
-        <tr>  <td>MALL11</td>     <td>Genial Gestão</td>        <td><input type = "text" id = "cotacao-MALL11"></td>       <td><input type = "text" id = "provento-MALL11"></td>      <td>   </td>   </tr>
-        <tr>  <td>VISC11</td>     <td>Vince Real State</td>     <td><input type = "text" id = "cotacao-VISC11"></td>       <td><input type = "text" id = "provento-VISC11"></td>      <td>   </td>   </tr>
-                
+                       
         <tr>  <td>KNCA11</td>     <td>KINEA</td>                <td><input type = "text" id = "cotacao-KNCA11"></td>       <td><input type = "text" id = "provento-KNCA11"></td>      <td>   </td>   </tr>
         <tr>  <td>CPTR11</td>     <td>Capitânia S.A.</td>       <td><input type = "text" id = "cotacao-CPTR11"></td>       <td><input type = "text" id = "provento-CPTR11"></td>      <td>   </td>   </tr>
         
@@ -63,14 +60,7 @@
       fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=LVBI11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-LVBI11').value = provento[0].valor ;})})
       
       
-      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/MALL11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-MALL11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
-      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=MALL11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-MALL11').value = provento[0].valor ;})})
-          
-      
-      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/VISC11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-VISC11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
-      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=VISC11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-VISC11').value = provento[0].valor ;})})
-            
-            
+                 
       fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/KNCA11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-KNCA11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
       fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=KNCA11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-KNCA11').value = provento[0].valor ;})})
       
