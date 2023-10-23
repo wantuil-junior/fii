@@ -12,27 +12,25 @@
 <BODY> 
    <table class = "tabela1">
  
+   
+
         <tr>  <th>Fundo</th> <th>Gestor</th> <th>Cotação</th>  <th>Proventos</th> <th>Quantidade</th>    </tr>
-       
+        
         <tr>  <td>HGLG11</td>     <td>Credit Suisse</td>        <td><input type = "text" id = "cotacao-HGLG11"></td>       <td><input type = "text" id = "provento-HGLG11"></td>      <td>   </td>   </tr>
         <tr>  <td>KNRI11</td>     <td>KINEA</td>                <td><input type = "text" id = "cotacao-KNRI11"></td>       <td><input type = "text" id = "provento-KNRI11"></td>      <td>   </td>   </tr>
-        <tr>  <td>BTLG11</td>     <td>BTG Pactual</td>          <td><input type = "text" id = "cotacao-BTLG11"></td>       <td><input type = "text" id = "provento-BTLG11"></td>      <td>   </td>   </tr>
-        <tr>  <td>XPLG11</td>     <td>XP Vista</td>             <td><input type = "text" id = "cotacao-XPLG11"></td>       <td><input type = "text" id = "provento-XPLG11"></td>      <td>   </td>  </tr>
         <tr>  <td>BRCO11</td>     <td>Bresco</td>               <td><input type = "text" id = "cotacao-BRCO11"></td>       <td><input type = "text" id = "provento-BRCO11"></td>      <td>   </td>   </tr>
-        <tr>  <td>VILG11</td>     <td>Vinci Real State</td>     <td><input type = "text" id = "cotacao-VILG11"></td>       <td><input type = "text" id = "provento-VILG11"></td>      <td>   </td>   </tr>
-        <tr>  <td>LVBI11</td>     <td>VBI Real State</td>       <td><input type = "text" id = "cotacao-LVBI11"></td>       <td><input type = "text" id = "provento-LVBI11"></td>      <td>   </td>   </tr>
-        <tr>  <td>RBRL11</td>     <td>RBR Gestao</td>           <td><input type = "text" id = "cotacao-RBRL11"></td>       <td><input type = "text" id = "provento-RBRL11"></td>      <td>   </td>   </tr>
-        <tr>  <td>TRBL11</td>     <td>Rio Bravo</td>            <td><input type = "text" id = "cotacao-TRBL11"></td>       <td><input type = "text" id = "provento-TRBL11"></td>      <td>   </td>   </tr>
         <tr>  <td>ALZR11</td>     <td>Alianza Gestao</td>       <td><input type = "text" id = "cotacao-ALZR11"></td>       <td><input type = "text" id = "provento-ALZR11"></td>      <td>   </td>   </tr>
-        
-        
+        <tr>  <td>LVBI11</td>     <td>VBI Real State</td>       <td><input type = "text" id = "cotacao-LVBI11"></td>       <td><input type = "text" id = "provento-LVBI11"></td>      <td>   </td>   </tr>        
+
         <tr>  <td>MALL11</td>     <td>Genial Gestão</td>        <td><input type = "text" id = "cotacao-MALL11"></td>       <td><input type = "text" id = "provento-MALL11"></td>      <td>   </td>   </tr>
-        <tr>  <td>HSML11</td>     <td>HSI</td>                  <td><input type = "text" id = "cotacao-HSML11"></td>       <td><input type = "text" id = "provento-HSML11"></td>      <td>   </td>   </tr>
+        <tr>  <td>XPML11</td>     <td>HSI</td>                  <td><input type = "text" id = "cotacao-XPML11"></td>       <td><input type = "text" id = "provento-XPML11"></td>      <td>   </td>   </tr>
         
     </table> 
 
     <script>
   
+       // RETIRADOS   BTLG11, XPLG11,VILG11,RBRL11,HSML11  
+
       //fetch("https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=HGLG11.SA&interval=1min&apikey=S4MUCCZZCQKRI0VZ").then((response)   => {response.json().then((cotacao) => {document.getElementById('inHGLG11').value = cotacao["Global Quote"]["05. price"] ;})})
       //https://statusinvest.com.br/home/mainsearchquery?q=KNRI11
       
@@ -43,44 +41,25 @@
       fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/KNRI11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-KNRI11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
       fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=KNRI11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-KNRI11').value = provento[0].valor ;})})
     
-
-      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/BTLG11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-BTLG11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
-      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=BTLG11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-BTLG11').value = provento[0].valor ;})})
-      
-      
-      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/XPLG11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-XPLG11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
-      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=XPLG11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-XPLG11').value = provento[0].valor ;})})
-      
       
       fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/BRCO11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-BRCO11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
       fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=BRCO11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-BRCO11').value = provento[0].valor ;})})
-      
-            
-      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/VILG11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-VILG11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
-      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=VILG11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-VILG11').value = provento[0].valor ;})})
-      
-            
-      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/LVBI11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-LVBI11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
-      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=LVBI11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-LVBI11').value = provento[0].valor ;})})
-      
-
-      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/TRBL11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-TRBL11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
-      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=TRBL11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-TRBL11').value = provento[0].valor ;})})
       
                  
       fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/ALZR11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-ALZR11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
       fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=ALZR11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-ALZR11').value = provento[0].valor ;})})
       
-      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/RBRL11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-RBRL11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
-      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=RBRL11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-RBRL11').value = provento[0].valor ;})})
-      
-      
+            
+      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/LVBI11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-LVBI11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
+      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=LVBI11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-LVBI11').value = provento[0].valor ;})})
+            
+            
       fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/MALL11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-MALL11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
       fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=MALL11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-MALL11').value = provento[0].valor ;})})
       
 
-      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/HSML11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-HSML11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
-      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=HSML11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-HSML11').value = provento[0].valor ;})})
+      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/XPML11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-XPML11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
+      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=HSML11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-XPML11').value = provento[0].valor ;})})
            
 
     </script>    
