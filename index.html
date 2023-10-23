@@ -23,7 +23,7 @@
         <tr>  <td>LVBI11</td>     <td>VBI Real State</td>       <td><input type = "text" id = "cotacao-LVBI11"></td>       <td><input type = "text" id = "provento-LVBI11"></td>      <td>   </td>   </tr>        
 
         <tr>  <td>MALL11</td>     <td>Genial Gestão</td>        <td><input type = "text" id = "cotacao-MALL11"></td>       <td><input type = "text" id = "provento-MALL11"></td>      <td>   </td>   </tr>
-        <tr>  <td>XPML11</td>     <td>HSI</td>                  <td><input type = "text" id = "cotacao-XPML11"></td>       <td><input type = "text" id = "provento-XPML11"></td>      <td>   </td>   </tr>
+        <tr>  <td>XPML11</td>     <td>XP VISTA</td>             <td><input type = "text" id = "cotacao-XPML11"></td>       <td><input type = "text" id = "provento-XPML11"></td>      <td>   </td>   </tr>
         
     </table> 
 
@@ -59,7 +59,7 @@
       
 
       fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/XPML11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-XPML11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
-      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=HSML11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-XPML11').value = provento[0].valor ;})})
+      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=XPML11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-XPML11').value = provento[0].valor ;})})
            
 
     </script>    
