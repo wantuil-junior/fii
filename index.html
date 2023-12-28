@@ -35,7 +35,7 @@
         <tr>  <td>KNCR11</td>     <td>KINEA</td>                 <td><input type = "text" id = "cotacao-KNCR11"></td>       <td><input type = "text" id = "provento-KNCR11"></td>      <td>   </td>   </tr>
            
 
-        <tr>  <td>RZTR11</td>     <td>RIZA</td>                  <td><input type = "text" id = "cotacao-RZTR11"></td>       <td><input type = "text" id = "provento-RZTR11"></td>      <td>    </td>   </tr>
+        <tr>  <td>RZAG11</td>     <td>RIZA</td>                  <td><input type = "text" id = "cotacao-RZAG11"></td>       <td><input type = "text" id = "provento-RZAG11"></td>      <td>    </td>   </tr>
         <tr>  <td>RURA11</td>     <td>KINEA</td>                 <td><input type = "text" id = "cotacao-RURA11"></td>       <td><input type = "text" id = "provento-RURA11"></td>      <td>    </td>   </tr>
         <tr>  <td>SNAG11</td>     <td>SUNO</td>                  <td><input type = "text" id = "cotacao-SNAG11"></td>       <td><input type = "text" id = "provento-SNAG11"></td>      <td> 10 </td>   </tr>
         
@@ -106,8 +106,8 @@
      
 
 
-      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/RZTR11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-RZTR11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
-      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=RZTR11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-RZTR11').value = provento[0].valor ;})})
+      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/RZAG11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-RZAG11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
+      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=RZAG11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-RZAG11').value = provento[0].valor ;})})
        
       
       fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/RURA11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-RURA11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
