@@ -30,6 +30,10 @@
         <tr>  <td>HSML11</td>     <td>HSI</td>                  <td><input type = "text" id = "cotacao-HSML11"></td>       <td><input type = "text" id = "provento-HSML11"></td>      <td>   </td>   </tr>
        
        
+        <tr>  <td>KNCR11</td>     <td>KINEA</td>                <td><input type = "text" id = "cotacao-KNCR11"></td>       <td><input type = "text" id = "provento-KNCR11"></td>      <td>   </td>   </tr>
+        <tr>  <td>HGCR11</td>     <td>Credit Suisse</td>        <td><input type = "text" id = "cotacao-HGCR11"></td>       <td><input type = "text" id = "provento-HGCR11"></td>      <td>   </td>   </tr>
+        <tr>  <td>AFHI11</td>     <td>AF Invest</td>            <td><input type = "text" id = "cotacao-AFHI11"></td>       <td><input type = "text" id = "provento-AFHI11"></td>      <td>   </td>   </tr>
+       
         
     
     <script>
@@ -80,6 +84,18 @@
       fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=HSML11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-HSML11').value = provento[0].valor ;})})
        
     
+
+      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/KNCR11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-KNCR11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
+      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=KNCR11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-KNCR11').value = provento[0].valor ;})})
+      
+      
+      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/HGCR11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-MALL11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
+      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=HGCR11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-HGCR11').value = provento[0].valor ;})})
+      
+
+      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/AFHI11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-AFHI11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
+      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=AFHI11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-AFHI11').value = provento[0].valor ;})})
+       
       
     </script>    
 
