@@ -89,7 +89,7 @@
       fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=KNCR11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-KNCR11').value = provento[0].valor ;})})
       
       
-      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/HGCR11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-MALL11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
+      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/HGCR11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-HGCR11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
       fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=HGCR11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-HGCR11').value = provento[0].valor ;})})
       
 
