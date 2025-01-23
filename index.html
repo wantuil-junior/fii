@@ -16,7 +16,7 @@
 
         <tr>  <th>Ativo</th> <th>Gestor</th> <th>Cotação</th>  <th>Proventos</th> <th>Quantidade</th>    </tr>
         
-        <tr>  <td>HGLG11</td>     <td>Credit Suisse</td>        <td><input type = "text" id = "cotacao-HGLG11"></td>       <td><input type = "text" id = "provento-HGLG11"></td>      <td>   </td>   </tr>
+        <tr>  <td>HGLG11</td>     <td>Patria Investimentos</td>        <td><input type = "text" id = "cotacao-HGLG11"></td>       <td><input type = "text" id = "provento-HGLG11"></td>      <td>   </td>   </tr>
         <tr>  <td>KNRI11</td>     <td>KINEA</td>                <td><input type = "text" id = "cotacao-KNRI11"></td>       <td><input type = "text" id = "provento-KNRI11"></td>      <td>   </td>   </tr>
         <tr>  <td>BRCO11</td>     <td>Bresco</td>               <td><input type = "text" id = "cotacao-BRCO11"></td>       <td><input type = "text" id = "provento-BRCO11"></td>      <td>   </td>   </tr>
         <tr>  <td>ALZR11</td>     <td>Alianza Gestao</td>       <td><input type = "text" id = "cotacao-ALZR11"></td>       <td><input type = "text" id = "provento-ALZR11"></td>      <td>   </td>   </tr>
@@ -28,10 +28,10 @@
         <tr>  <td>MALL11</td>     <td>Genial Gestão</td>        <td><input type = "text" id = "cotacao-MALL11"></td>       <td><input type = "text" id = "provento-MALL11"></td>      <td>   </td>   </tr>
        
        
-
+        <tr>  <td>HGCR11</td>     <td>Patria Investimentos</td> <td><input type = "text" id = "cotacao-HGCR11"></td>       <td><input type = "text" id = "provento-HGCR11"></td>      <td>   </td>   </tr>
         <tr>  <td>KNCR11</td>     <td>KINEA</td>                <td><input type = "text" id = "cotacao-KNCR11"></td>       <td><input type = "text" id = "provento-KNCR11"></td>      <td>   </td>   </tr>
-        <tr>  <td>HGCR11</td>     <td>Credit Suisse</td>        <td><input type = "text" id = "cotacao-HGCR11"></td>       <td><input type = "text" id = "provento-HGCR11"></td>      <td>   </td>   </tr>
-       
+      
+        
         <tr>  <td>Bovespa</td>    <td>Bovespa</td>              <td><input type = "text" id = "cotacao-IBOV"></td>         <td><input type = "text" id =  "provento-IBOV"></td>       <td>   </td>   </tr>
         <tr>  <td>JHSF3</td>      <td>JHSF</td>                 <td><input type = "text" id = "cotacao-JHSF3"></td>        <td><input type = "text" id =  "provento-JHSF3"></td>      <td>   </td>   </tr>
         <tr>  <td>BBAS3</td>      <td>Banco do Brasil</td>      <td><input type = "text" id = "cotacao-BBAS3"></td>        <td><input type = "text" id =  "provento-BBAS3"></td>      <td>   </td>   </tr>
@@ -80,16 +80,15 @@
       fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/MALL11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-MALL11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
       fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=MALL11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-MALL11').value = provento[0].valor ;})})
       
-   
-    
-      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/KNCR11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-KNCR11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
-      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=KNCR11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-KNCR11').value = provento[0].valor ;})})
-      
       
       fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/HGCR11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-HGCR11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
       fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=HGCR11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-HGCR11').value = provento[0].valor ;})})
       
+    
+      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/KNCR11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-KNCR11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
+      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=KNCR11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-KNCR11').value = provento[0].valor ;})})
       
+            
       fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/IBOV").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-IBOV').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
       fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=IBOV&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-IBOV').value = provento[0].valor ;})}) 
   
