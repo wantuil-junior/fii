@@ -5,6 +5,7 @@
     <img  src = "./img/TioPatinhas.jpg"  margin = "0 auto" >
     <TITLE>Fundos Imobiliarios</TITLE>
     <link   rel = "stylesheet"  type = "text/css"  href = "./estilo.css">
+    <HR>
  </HEAD>
 
 
@@ -30,12 +31,11 @@
        
         <tr>  <td>HGCR11</td>     <td>Patria Investimentos</td> <td><input type = "text" id = "cotacao-HGCR11"></td>       <td><input type = "text" id = "provento-HGCR11"></td>      <td>   </td>   </tr>
         <tr>  <td>KNCR11</td>     <td>KINEA</td>                <td><input type = "text" id = "cotacao-KNCR11"></td>       <td><input type = "text" id = "provento-KNCR11"></td>      <td>   </td>   </tr>
-      
+        <tr>  <td>JHSF3</td>      <td>JHSF</td>                 <td><input type = "text" id = "cotacao-JHSF3"></td>        <td><input type = "text" id =  "provento-JHSF3"></td>      <td>   </td>   </tr>
         
         <tr>  <td>Bovespa</td>    <td>Bovespa</td>              <td><input type = "text" id = "cotacao-IBOV"></td>         <td><input type = "text" id =  "provento-IBOV"></td>       <td>   </td>   </tr>
-        <tr>  <td>JHSF3</td>      <td>JHSF</td>                 <td><input type = "text" id = "cotacao-JHSF3"></td>        <td><input type = "text" id =  "provento-JHSF3"></td>      <td>   </td>   </tr>
         <tr>  <td>BBAS3</td>      <td>Banco do Brasil</td>      <td><input type = "text" id = "cotacao-BBAS3"></td>        <td><input type = "text" id =  "provento-BBAS3"></td>      <td>   </td>   </tr>
-    
+        <tr>  <td>SANB11</td>     <td>Santander</td>            <td><input type = "text" id = "cotacao-SANB11"></td>       <td><input type = "text" id =  "provento-SANB11"></td>     <td>   </td>   </tr>
     <script>
   
        // RETIRADOS   BTLG11, XPLG11,VILG11,RBRL11,HSML11  
@@ -84,6 +84,10 @@
       fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/HGCR11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-HGCR11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
       fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=HGCR11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-HGCR11').value = provento[0].valor ;})})
       
+
+      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/JHSF3").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-JHSF3').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
+      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=JHSF3&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-JHSF3').value = provento[0].valor ;})}) 
+
     
       fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/KNCR11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-KNCR11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
       fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=KNCR11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-KNCR11').value = provento[0].valor ;})})
@@ -93,12 +97,12 @@
       fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=IBOV&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-IBOV').value = provento[0].valor ;})}) 
   
 
-      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/JHSF3").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-JHSF3').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
-      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=JHSF3&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-JHSF3').value = provento[0].valor ;})}) 
-
 
       fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/BBAS3").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-BBAS3').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
       fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=BBAS3&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-BBAS3').value = provento[0].valor ;})}) 
+  
+      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/SANB11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-SANB11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
+      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=SANB11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-SANB11').value = provento[0].valor ;})}) 
   
   
     </script>    
