@@ -35,6 +35,17 @@
         <tr>  <td>BBAS3</td>      <td>Banco do Brasil</td>      <td><input type = "text" id = "cotacao-BBAS3"></td>               <td>  <input type = "text" id =  "provento-BBAS3">    </td>           <td>  R$ 25,00    </td>   </tr>
         <tr>  <td>SANB11</td>     <td>Santander</td>            <td><input type = "text" id = "cotacao-SANB11"></td>              <td>  <input type = "text" id =  "provento-SANB11">   </td>           <td>  R$ 25,00    </td>   </tr>
         <tr>  <td>BBSE3</td>      <td>BB Seguridade</td>        <td><input type = "text" id = "cotacao-BBSE3"></td>               <td>  <input type = "text" id =  "provento-BBSE3">    </td>           <td>  R$ 35,00    </td>   </tr>
+       
+       
+        
+        <tr>  <td>WEGE3</td>       <td>WEG S.A</td>            <td><input type = "text" id = "cotacao-WEGE3"></td>              <td>  <input type = "text" id =  "provento-WEGE3">      </td>           <td>  R$ 45,00    </td>   </tr>
+       
+       
+        <tr>  <td>TRPL4</td>       <td>ISA Cteep</td>          <td><input type = "text" id = "cotacao-TRPL4"></td>              <td>  <input type = "text" id =  "provento-TRPL4">      </td>           <td>  R$ 25,00    </td>   </tr>
+        <tr>  <td>EGIE3</td>       <td>Engie Brasil</td>       <td><input type = "text" id = "cotacao-EGIE3"></td>              <td>  <input type = "text" id =  "provento-EGIE3">      </td>           <td>  R$ 40,00    </td>   </tr>
+        <tr>  <td>TAEE11</td>      <td>TAESA S.A</td>          <td><input type = "text" id = "cotacao-TAEE11"></td>             <td>  <input type = "text" id =  "provento-TAEE11">     </td>           <td>  R$ 35,00    </td>   </tr>
+       
+             
         <tr>  <td>GGRC11</td>     <td>ZAGROS</td>               <td><input type = "text" id = "cotacao-GGRC11"></td>              <td>  <input type = "text" id =  "provento-GGRC11">   </td>           <td>  R$ 10,00    </td>   </tr>
         <tr>  <td>JHSF3</td>      <td>JHSF</td>                 <td><input type = "text" id = "cotacao-JHSF3"></td>               <td>  <input type = "text" id =  "provento-JHSF3">    </td>           <td>  R$ 3,50     </td>   </tr>
    
@@ -102,7 +113,24 @@
       fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=BBSE3&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-BBSE3').value = provento[0].valor ;})}) 
   
 
- 
+      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/WEGE3").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-WEGE3').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
+      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=wege3&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-WEGE3').value = provento[0].valor ;})}) 
+      
+        
+      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/TRPL4").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-TRPL4').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
+      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=TRPL4&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-TRPL4').value = provento[0].valor ;})}) 
+      
+      
+      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/EGIE3").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-EGIE3').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
+      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=EGIE3&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-EGIE3').value = provento[0].valor ;})}) 
+      
+      
+      
+      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/TAEE11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-TAEE11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
+      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=TAEE11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-TAEE11').value = provento[0].valor ;})}) 
+  
+
+
       fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/GGRC11").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-GGRC11').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
       fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=GGRC11&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-GGRC11').value = provento[0].valor ;})})
       
