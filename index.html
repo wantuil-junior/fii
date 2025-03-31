@@ -41,7 +41,7 @@
         <tr>  <td>WEGE3</td>       <td>WEG S.A</td>            <td><input type = "text" id = "cotacao-WEGE3"></td>              <td>  <input type = "text" id =  "provento-WEGE3">      </td>           <td>  R$ 45,00    </td>   </tr>
        
        
-        <tr>  <td>TRPL4</td>       <td>ISA Cteep</td>          <td><input type = "text" id = "cotacao-TRPL4"></td>              <td>  <input type = "text" id =  "provento-TRPL4">      </td>           <td>  R$ 25,00    </td>   </tr>
+        <tr>  <td>ISAE4</td>       <td>ISA Energia</td>        <td><input type = "text" id = "cotacao-ISAE4"></td>              <td>  <input type = "text" id =  "provento-ISAE4">      </td>           <td>  R$ 25,00    </td>   </tr>
         <tr>  <td>EGIE3</td>       <td>Engie Brasil</td>       <td><input type = "text" id = "cotacao-EGIE3"></td>              <td>  <input type = "text" id =  "provento-EGIE3">      </td>           <td>  R$ 40,00    </td>   </tr>
         <tr>  <td>TAEE11</td>      <td>TAESA S.A</td>          <td><input type = "text" id = "cotacao-TAEE11"></td>             <td>  <input type = "text" id =  "provento-TAEE11">     </td>           <td>  R$ 35,00    </td>   </tr>
        
@@ -117,8 +117,8 @@
       fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=wege3&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-WEGE3').value = provento[0].valor ;})}) 
       
         
-      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/TRPL4").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-TRPL4').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
-      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=TRPL4&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-TRPL4').value = provento[0].valor ;})}) 
+      fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/ISAE4").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-ISAE4').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
+      fetch("https://fintz.herokuapp.com/api/b3/proventos?ticker=ISAE4&size=3&sort=dataCom,desc").then((response)   => {response.json().then((provento) => {document.getElementById('provento-ISAE4').value = provento[0].valor ;})}) 
       
       
       fetch("https://cotacao.b3.com.br/mds/api/v1/instrumentQuotation/EGIE3").then((response)   => {response.json().then((cotacao) => {document.getElementById('cotacao-EGIE3').value = cotacao.Trad[0].scty.SctyQtn.curPrc ;})})
